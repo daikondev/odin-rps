@@ -17,3 +17,9 @@ div.appendChild(btn3);
 btn3.addEventListener('click',function(){
     console.log('Scissors');
 });
+
+const choice = ['Rock', 'Paper', 'Scissors'];
+function getComputerChoice(){
+  let compChoice = Math.floor(Math.random()*choice.length);
+  return choice[compChoice];
+};
