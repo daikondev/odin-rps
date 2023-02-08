@@ -1,0 +1,10 @@
+#score {
+    background-color: transparent;
+    border: 2px dashed;
+    width: 400px;
+    height: 100px;
+}
+.button{
+    background-color: transparent;
+    border-color: transparent;
+}
