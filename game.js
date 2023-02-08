@@ -1,35 +1,19 @@
-const choice = ['Rock','Paper','Scissors'];
-function getComputerChoice(){
-    const computerChoice = Math.floor(Math.random() * choice.length);
-    return choice[computerChoice]
-}
-function playRound(playerSelection, computerSelection){
-    const options = {
-        Rock: {weakTo: 'Paper', strongTo: 'Scissors'},
-        Paper: {weakTo: 'Scissors', strongTo: 'Rock'},
-        Scissors: {weakTo: 'Rock', strongTo: 'Paper'}
-    }
-    if (options[playerSelection].strongTo === computerSelection){
-        return "Player wins!";
-    } else {
-        return "Computer wins!";
-    }
-}
-function game(){
-    let playerPoints = 0;
-    let computerPoints = 0;
-    for (let i = 0; i < 5; i++){
-      let player = prompt("Rock, Paper or Scissors? (CAPITALIZED): ");
-      let round = playRound(player, getComputerChoice());
-      if (round === "Player wins!"){
-        playerPoints++;
-      }else {
-        computerPoints++;
-      }
-    }
-    if (playerPoints > computerPoints){
-        return "The player has won the game."
-    } else {
-        return "The computer has won the game."
-    }
-}
+const div = document.querySelector('div');
+
+const btn1 = document.createElement('button');
+div.appendChild(btn1);
+btn1.addEventListener('click', function(){
+    console.log('Rock');
+});
+
+const btn2 = document.createElement('button');
+div.appendChild(btn2);
+btn2.addEventListener('click', function () {
+    console.log('Paper')
+});
+
+const btn3 = document.createElement('button');
+div.appendChild(btn3);
+btn3.addEventListener('click',function(){
+    console.log('Scissors');
+});
