@@ -2,7 +2,8 @@ const scoreCounter = document.querySelector("#score");
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-
+let playerScore = 0;
+let computerScore = 0;
 function getComputerChoice(){
     const options = ['rock', 'paper', 'scissors'];
     const computerChoice = options[~~(Math.random() * options.length)];
@@ -15,7 +16,25 @@ function playRound (playerChoice, computerChoice) {
         scissors: {weakTo: "rock", strongTo: "paper"}
     }
     if (options[playerChoice].strongTo === computerChoice) {
-        return "p W";
+        return changeScore('player');
     }
-    return "c W";
+    return changeScore('computer');
 };
+
+function changeScore(winner){
+    if (winner === 'player') {
+        playerScore++;
+    } else {
+        computerScore++;
+    }
+    scoreCounter.textContent = `Player - ${playerScore} | Computer - ${computerScore}`;
+};
+rock.addEventListener('click', () => {
+    playRound('rock', getComputerChoice());
+});
+paper.addEventListener('click', () => {
+    playRound('paper', getComputerChoice());
+});
+scissors.addEventListener('click', () => {
+    playRound('scissors', getComputerChoice());
+});
