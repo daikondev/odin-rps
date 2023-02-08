@@ -23,3 +23,16 @@ function getComputerChoice(){
   let compChoice = Math.floor(Math.random()*choice.length);
   return choice[compChoice];
 };
+
+function playRound(playerChoice, computerChoice){
+  const options = {
+      Rock: {weakTo: 'Paper', strongTo: 'Scissors'},
+      Paper: {weakTo: 'Scissors', strongto: 'Rock'},
+      Scissors: {weaktTo: 'Rock', strongTo: 'Paper'}
+  }
+  if (options[playerChoice].strongTo === computerChoice){
+      return "Player has won!";
+  } else {
+      return "Computer has won!";
+  }
+};
