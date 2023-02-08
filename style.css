@@ -3,8 +3,14 @@
     border: 2px dashed;
     width: 400px;
     height: 100px;
+    text-align: center;
+    padding-top: 75px;
 }
 .button{
     background-color: transparent;
     border-color: transparent;
+    padding-left: 60px;
+}
+.inactive{
+    display: none;
 }
